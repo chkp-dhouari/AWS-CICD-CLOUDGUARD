@@ -1,0 +1,9 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "cloudguard-app"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1r36ce1227ey1"
+s3_prefix = "cloudguard-app"
+region = "us-east-1"
+capabilities = "CAPABILITY_IAM"
