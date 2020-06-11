@@ -66,4 +66,25 @@ Then chose your repository and branch ..in our case the repository you created a
 
 ![header image](cpipe4.png) 
 
+For Build provider, choose AWS CodeBuild, and then choose Create project.
+![header image](cpipe5.png) 
 
+### Configure build project settings and choose Continue to CodePipeline.
+
+* Project name – <your project name>
+
+* Operating system – Ubuntu
+
+* Runtime – Standard
+
+* Runtime version – aws/codebuild/standard:3.0 ( The app is node.js 12.x requiring ver3.0)
+
+* Image version – Latest
+
+* Buildspec name – buildspec.yml
+
+![header image](cpipe6.png) 
+
+### We now move to the Deploy stage and we will CloudFormation as the Deploy provider
+
+![header image](cpipe8.png) 
