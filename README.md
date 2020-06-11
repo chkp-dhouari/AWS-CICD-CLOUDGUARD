@@ -48,8 +48,8 @@ Lets first create the S3 bucket:
 Add CloudGuard Workload security using the CLI plugin and configure the proact and the fsp. Please refer the annotations in the build and deploy stages or phases: 
 ![header image](build1.png) 
 
-Its now time to intialize your project directory with Git, commit and push all the files to your Repository of choice. 
-You can use Github or AWS CodeCommit
+Its now time to intialize your project directory with Git, commit all the files and push to your Github or AWS CodeCommit repository.
+I am using AWS CodeCommit.If AWS Codecommit, you will first need to add CodeCommit IAM permissions on your AWS account in order to be able to push.
 ![header image](git1.png) 
 
 ![header image](git2.png) 
