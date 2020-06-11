@@ -1,4 +1,4 @@
-### Serverless CI/CD Security with AWS CodePipeline and Check Point CloudGuard Workload:
+# Serverless CI/CD Security with AWS CodePipeline and Check Point CloudGuard Workload:
 ## Deploying and securing AWS Lambda functions with AWS CodePipeline and Check Point Serverless Security
 
 Check Point CloudGuard Workload is the serverless security solution from Check Point Software. It will provides build, governeance and runtime securityfor serverless applications. 
