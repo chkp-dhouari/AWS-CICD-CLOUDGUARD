@@ -57,3 +57,13 @@ And push all the commited files to your Github or AWS CodeCommit repository. I w
 
 ![header image](ccom.png) 
 
+We are now ready to create the AWS CodePipeline at the CodePipeline service menu.
+Enter a name for your pipeline. you can keep the rest settings as default as a IAM role for the codepipeline will be created
+![header image](cpipe1.png) 
+
+Then chose your repository and branch ..in our case the repository you created and the default branch master
+![header image](cpipe3.png) 
+
+![header image](cpipe4.png) 
+
+
