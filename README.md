@@ -57,6 +57,7 @@ Add CloudGuard Workload security using the CLI plugin and configure the proact a
 
 Its now time to intialize your project directory with Git, commit all the files a.
 I am using AWS CodeCommit.If AWS Codecommit, you will first need to add CodeCommit IAM permissions on your AWS account in order to be able to push.
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html
 ![header image](git1.png) 
 
 And push all the commited files to your Github or AWS CodeCommit repository. I will be using AWS CodeCommiy.
