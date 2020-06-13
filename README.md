@@ -62,23 +62,23 @@ Add CloudGuard Workload security using the CLI plugin and configure the proact a
 ![header image](build1.png) 
 
 Its now time to intialize your project directory with Git, commit all the files a.
-I am using AWS CodeCommit.If AWS Codecommit, you will first need to add CodeCommit IAM permissions on your AWS account in order to be able to push.
+I am using AWS CodeCommit. If AWS Codecommit, you will first need to add CodeCommit IAM permissions on your AWS account in order to be able to pushall the commited files to your Github or AWS CodeCommit repository. I will be using AWS CodeCommit:
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html
 
 ![header image](git1.png) 
 
-And push all the commited files to your Github or AWS CodeCommit repository. I will be using AWS CodeCommit:
-
 ![header image](git3.png) 
+
+# CodeCommit
 
 ![header image](ccom.png) 
 
-### We are now ready to create the AWS CodePipeline at the CodePipeline service menu:
-Enter a name for your pipeline. you can keep the rest settings as default as a IAM role for the codepipeline will be created
+# CodePipeline
+
+We are now ready to create the AWS CodePipeline at the CodePipeline service menu.
+Enter a name for your pipeline. you can keep the rest of the settings as default as an IAM role for the codepipeline will be created
 
 ![header image](cpipe1.png) 
-
-# CodeCommit
 
 Then chose your repository and branch ..in our case the repository you created and the default branch master
 
@@ -112,6 +112,7 @@ For Build provider, choose AWS CodeBuild, and then choose Create project:
 ![header image](cpipe6.png) 
 
 # CodeDeploy
+
 We now move to the Deploy stage and we will CloudFormation as the Deploy provider:
 
 ![header image](cpipe8.png) 
@@ -201,11 +202,8 @@ Resources:
 }
 
 ```
-
-
-# CodePipeline
-### Create Pipeline and Release Changes
-> You can monitor the pipeline execution under the CodeBuild Phase logs under Build Logs.
+## Create Pipeline and Release Changes
+> You have trigerred the pipeline to run and you can monitor the pipeline execution under the CodeBuild Phase logs under Build Logs.
 
 ```
 [Container] 2020/06/13 15:33:37 Waiting for agent ping
