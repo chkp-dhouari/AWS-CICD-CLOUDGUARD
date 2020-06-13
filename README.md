@@ -61,6 +61,7 @@ Lets first create the S3 bucket:
 ![header image](s33.png) 
 
 Add CloudGuard Workload security using the CLI plugin and configure the proact and the fsp. Please refer the annotations in the build and deploy stages or phases: 
+**Note: A CloudGuard API token is required with the cloudguard commands to execute successfuly and you can add the token using the -t option or add a cloudguard-config.json file in your repository. 
 
 ![header image](build1.png) 
 
