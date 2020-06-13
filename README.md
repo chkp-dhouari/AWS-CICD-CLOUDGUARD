@@ -41,7 +41,7 @@ We will first use SAM to create a serverless project named here cloudguard-app f
 **tests/** this directory contains unit tests for your application
 
 The Application is a simple node.js 12.x application that will return a string when invoked ..'Serverless app secured by CloudGuard Workload!
-![header image](src1.png) 
+![header image](src.png) 
 
 The SAM template or template.yml defines the serverless application: 
 ![header image](temp1.png) 
