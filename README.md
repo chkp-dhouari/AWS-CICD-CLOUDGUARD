@@ -73,16 +73,20 @@ And push all the commited files to your Github or AWS CodeCommit repository. I w
 
 ![header image](ccom.png) 
 
-We are now ready to create the AWS CodePipeline at the CodePipeline service menu.
+### We are now ready to create the AWS CodePipeline at the CodePipeline service menu:
 Enter a name for your pipeline. you can keep the rest settings as default as a IAM role for the codepipeline will be created
 
 ![header image](cpipe1.png) 
+
+# CodeCommit
 
 Then chose your repository and branch ..in our case the repository you created and the default branch master
 
 ![header image](cpipe3.png) 
 
 ![header image](cpipe4.png) 
+
+# CodeBuild
 
 For Build provider, choose AWS CodeBuild, and then choose Create project:
 
@@ -107,7 +111,8 @@ For Build provider, choose AWS CodeBuild, and then choose Create project:
 
 ![header image](cpipe6.png) 
 
-### We now move to the Deploy stage and we will CloudFormation as the Deploy provider:
+# CodeDeploy
+We now move to the Deploy stage and we will CloudFormation as the Deploy provider:
 
 ![header image](cpipe8.png) 
 
@@ -196,8 +201,10 @@ Resources:
 }
 
 ```
-### Create Pipeline and Release Changes
 
+
+# CodePipeline
+### Create Pipeline and Release Changes
 > You can monitor the pipeline execution under the CodeBuild Phase logs under Build Logs.
 
 ```
@@ -373,3 +380,4 @@ Protego - FSP (1.5.10) Summary:
 [Container] 2020/06/13 15:35:53 Phase context status code:  Message: 
 
 ```
+#### if you would like to understand more about Serverless Security and CloudGuard Workload please feel free to reach to me or attend my webinars on TechTalk or BrightTalk. 
