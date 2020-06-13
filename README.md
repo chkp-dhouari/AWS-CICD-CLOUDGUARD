@@ -16,8 +16,11 @@ It is important to note that there are other methods besides AWS SAM to build an
 On your laptop, please install the following:
 
 > Install AWS CLI https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
+
 > Install SAM CLI https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
+
 > Install Git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
 > Please note that I will be using MacOS in this tutorial and feel free to use any OS of your choice.
 
 The AWS CodePipeline create a CICD pipeline to build and deploy a Lambda function. we will using the SAM cli to generate the source code for the Lambda and needed templates for the AWS Codepipeline as follow. 
