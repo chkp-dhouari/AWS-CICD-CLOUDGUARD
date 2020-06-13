@@ -45,36 +45,44 @@ The Application is a simple node.js 12.x application that will return a string w
 ![header image](src.png) 
 
 The SAM template or template.yml defines the serverless application: 
+
 ![header image](temp1.png) 
 
 The build specification file or Buildspec.yml defines the required packages and uploads the deployment package to a Amazon S3 bucket.
 You will have to create a AWS S3 bucket and add its name to the file and add the CloudGuard Workload CLI plugin to define Proact or the governance and static code scanning as well as the runtime application security testing with the Fuction Self Protection or FSP.
 Lets first create the S3 bucket: 
+
 ![header image](s33.png) 
 
 Add CloudGuard Workload security using the CLI plugin and configure the proact and the fsp. Please refer the annotations in the build and deploy stages or phases: 
+
 ![header image](build1.png) 
 
 Its now time to intialize your project directory with Git, commit all the files a.
 I am using AWS CodeCommit.If AWS Codecommit, you will first need to add CodeCommit IAM permissions on your AWS account in order to be able to push.
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html
+
 ![header image](git1.png) 
 
-And push all the commited files to your Github or AWS CodeCommit repository. I will be using AWS CodeCommiy.
+And push all the commited files to your Github or AWS CodeCommit repository. I will be using AWS CodeCommit:
+
 ![header image](git3.png) 
 
 ![header image](ccom.png) 
 
 We are now ready to create the AWS CodePipeline at the CodePipeline service menu.
 Enter a name for your pipeline. you can keep the rest settings as default as a IAM role for the codepipeline will be created
+
 ![header image](cpipe1.png) 
 
 Then chose your repository and branch ..in our case the repository you created and the default branch master
+
 ![header image](cpipe3.png) 
 
 ![header image](cpipe4.png) 
 
-For Build provider, choose AWS CodeBuild, and then choose Create project.
+For Build provider, choose AWS CodeBuild, and then choose Create project:
+
 ![header image](cpipe5.png) 
 
 ### Configure build project settings and choose Continue to CodePipeline.
@@ -97,6 +105,7 @@ For Build provider, choose AWS CodeBuild, and then choose Create project.
 ![header image](cpipe6.png) 
 
 ### We now move to the Deploy stage and we will CloudFormation as the Deploy provider:
+
 ![header image](cpipe8.png) 
 
 * **Deploy provider**: cloudformation - we use that to deploy our serverless function
@@ -104,6 +113,7 @@ For Build provider, choose AWS CodeBuild, and then choose Create project.
 * **Region**: your AWS region
 
 * **Stack name** - the name of the cloudformation stack to deploy the lambda 
+
 > **Note**: you will have to first create a CloudFormation Stack which will be used by CodeDeploy to create a ChangeSet.
 The cloudFormation Stack Template is as follow and you can use that to create the stack.
 ```
@@ -183,8 +193,6 @@ Resources:
 }
 
 ```
-
-
 ### Create Pipeline and Release Changes
 
 > You can monitor the pipeline execution under the CodeBuild Phase logs under Build Logs.
