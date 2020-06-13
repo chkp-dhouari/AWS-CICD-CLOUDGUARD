@@ -89,6 +89,9 @@ For Build provider, choose AWS CodeBuild, and then choose Create project.
 
 * Buildspec name – buildspec.yml
 
+> **Please note the CodeBuild IAM role name as you will have to add permissions to allow access to all needed AWS ressources or the pipeline will FAIL..
+> codebuild-cloudguard-cicd-project-service-role
+
 ![header image](cpipe6.png) 
 
 ### We now move to the Deploy stage and we will CloudFormation as the Deploy provider
