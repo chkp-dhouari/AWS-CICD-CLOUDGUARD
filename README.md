@@ -97,3 +97,46 @@ For Build provider, choose AWS CodeBuild, and then choose Create project.
 ### We now move to the Deploy stage and we will CloudFormation as the Deploy provider
 
 ![header image](cpipe8.png) 
+
+> you will have to first create a CloudFormation Stack which will be used by CodeDeploy to create a ChangeSet.
+The cloudFormation Stack Template is as follow and you can use that to create the stack.
+```
+AWSTemplateFormatVersion: 2010-09-09
+Description: cloudguard-app
+Resources:
+  CloudguardFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      Code:
+        S3Bucket: <your_bucket>
+        S3Key: <your_bucket_key>
+      Description: A Lambda function that returns a static string.
+      Tags:
+        - Value: SAM
+          Key: 'lambda:createdBy'
+      MemorySize: 128
+      Handler: src/handlers/cloudguard.cloudguardHandler
+      Role: !GetAtt 
+        - CloudguardFunctionRole
+        - Arn
+      Timeout: 100
+      Runtime: nodejs12.x
+  CloudguardFunctionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action:
+              - 'sts:AssumeRole'
+            Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole'
+      Tags:
+        - Value: SAM
+          Key: 'lambda:createdBy'
+          
+```
