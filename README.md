@@ -95,6 +95,10 @@ For Build provider, choose AWS CodeBuild, and then choose Create project.
 ![header image](cpipe6.png) 
 
 ### We now move to the Deploy stage and we will CloudFormation as the Deploy provider
+* deploy provider: cloudformation - we use that to deploy our serverless function
+* stqack name: the name of the cloudformation stack you created 
+* changeset: add a name for the cloudformation changeset..just append changeset to the name of your stack
+*
 
 ![header image](cpipe8.png) 
 
