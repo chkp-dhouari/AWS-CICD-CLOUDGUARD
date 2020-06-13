@@ -1,10 +1,10 @@
 # Serverless CI/CD Security with AWS CodePipeline and Check Point CloudGuard Workload:
 ## Deploying and securing AWS Lambda functions with AWS CodePipeline and Check Point Serverless Security
 
-Check Point CloudGuard Workload is the serverless security solution from Check Point Software. It will provide build, governeance and runtime securityfor serverless applications. 
-The Build and Governance security are implemented with Proact which does static scanning analysis of the code and FSP(function Selfv protection) which does runtime security by wbhitelisting the behavior of the application. CloudGuard workload can be integrated in any CI/CD pipeline with plugins available either via SAM or CLI for example. 
+Check Point CloudGuard Workload is the serverless security solution from Check Point Software. It will provide build, governeance and runtime securityfor serverless applications/
+The Build and Governance security are implemented with Proact which does static scanning analysis of the code and FSP(function Selfv protection) which does runtime security by wbhitelisting the behavior of the application. CloudGuard workload can be integrated in any CI/CD pipeline with plugins available either via SAM or CLI for example/
 In this tutorial, we will be using AWS CodePipeline to deploy a serverless application and add Cloudguard workload as a step in the build and deploy phases of the CI/CD pipeline. We will show how to build a simple Lambda function using the AWS SAM(Serverless Application Model) CLI and then create a CICD pipeline with AWS CodePipeline to build, secure and deploy that Lambda function. 
-We will integrate the Cloudguard Workload serverless security to AWS CodePipeline using the CLI plugin to perform Governance, Deep code analysis and Runtime application security. The proact feature perform the posture management check and SAST while the Function Self Protection performs the runtime security or RAST.
+We will integrate the Cloudguard Workload serverless security to AWS CodePipeline using the CLI plugin to perform Governance, Deep code analysis and Runtime application security. The proact feature perform the posture management check and SAST while the Function Self Protection performs the runtime security or RAST/
 It is important to note that there are other methods besides AWS SAM to build and package a lambda function such as the Serverless framework. please refer to my Tutorial using the Open Serverless Framework. For more information about AWS Codepipeline https://aws.amazon.com/codepipeline/
 
  ![header image](pipe2.png) 
