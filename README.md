@@ -31,7 +31,7 @@ We will first use SAM to create a serverless project named here cloudguard-app f
 ![header image](sam2.png) 
 
 ## The following ressources were generated as below:
-- buildspec.yml - this file is used by AWS CodeBuild to define the build stage steps to package your application for deployment to AWS - - Lambda and add the cloudguard workload build and runtime security with proact and FSP(Function Self Protect)
+--buildspec.yml-- this file is used by AWS CodeBuild to define the build stage steps to package your application for deployment to AWS - - Lambda and add the cloudguard workload build and runtime security with proact and FSP(Function Self Protect)
 - index.js - this file contains the sample Node.js 12.x code for the web service
 - template.yml - A template that defines the application's AWS resources
 - tests/ - this directory contains unit tests for your application
