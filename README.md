@@ -40,10 +40,11 @@ We will first use SAM to create a serverless project named here cloudguard-app f
 
 **tests/** this directory contains unit tests for your application
 
-The Application is a simple node.js 12.x application that will return a string when invoked ..'Serverless app secured by CloudGuard Workload!' header image
+The Application is a simple node.js 12.x application that will return a string when invoked ..'Serverless app secured by CloudGuard Workload!
+![header image](src1.png) 
 
 The SAM template or template.yml defines the serverless application: 
-![header image](tem.png) 
+![header image](temp1.png) 
 
 The build specification file or Buildspec.yml defines the required packages and uploads the deployment package to a Amazon S3 bucket.
 You will have to create a AWS S3 bucket and add its name to the file and add the CloudGuard Workload CLI plugin to define Proact or the governance and static code scanning as well as the runtime application security testing with the Fuction Self Protection or FSP.
