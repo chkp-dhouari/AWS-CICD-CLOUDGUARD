@@ -207,6 +207,8 @@ Resources:
 ```
 ## Create Pipeline and Release Changes
 > You have trigerred the pipeline to run and you can monitor the pipeline execution under the CodeBuild Phase logs under Build Logs.
+  you can see CloudGuard Workload did not find any malicious code but flagged the Lambda role as too permissive and that the FSP runtime security was added succesfully to the Lambda function. A secure IAM permission will be suggested in the cloudguard log for the app or security team to take action. In this case, Proact was set to alert only mode but can be changed to fail the pipeline when malicious CVEs or permissibe roles are found.
+  You have deployed and secured successfuly your serverless applications
 
 ```
 [Container] 2020/06/13 15:33:37 Waiting for agent ping
