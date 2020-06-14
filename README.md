@@ -119,9 +119,11 @@ For Build provider, choose AWS CodeBuild, and then choose Create project:
 
 * Buildspec name – buildspec.yml
 
-> **Please note the CodeBuild IAM role name as you will have to add permissions to allow access to all needed AWS ressources or the pipeline will FAIL..
+**Please note the CodeBuild IAM role name as you will have to add permissions to allow access to all needed AWS ressources or the pipeline will FAIL..**
 
 > codebuild-cloudguard-cicd-project-service-role
+
+You need to select the <Run in priveledge mode> option for CloudGuard Workload to execute succefully.
 
 ![header image](cpipe6.png) 
 
