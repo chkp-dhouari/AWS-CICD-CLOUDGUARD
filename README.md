@@ -12,7 +12,7 @@ We will integrate the Cloudguard Workload serverless security to AWS CodePipelin
 
 It is important to note that there are other methods besides AWS SAM to build and package a lambda function such as the Serverless framework. please refer to my Tutorial using the Open Serverless Framework. For more information about AWS Codepipeline. https://aws.amazon.com/codepipeline/
 
- ![header image](pipe2.png) 
+ ![header image](codecomm.png) 
  
 ## Prerequesites:
 On your laptop, please install the following:
