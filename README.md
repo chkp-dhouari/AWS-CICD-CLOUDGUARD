@@ -87,6 +87,7 @@ If you are using GitHub then you will need your SSH public key to your GitHub Re
 ![header image](git3.png) 
 
 # CodeCommit
+I have created a repository in AWS CodeCommit and named it CLOUDGUARD-GIT. you can name yours whatever you want. You HAVE to initialize your repository by create a file like README.md that describe the project that you are working on. Git will fail to push any file to your Repository if you do not initialize it!
 
 ![header image](ccom.png) 
 
