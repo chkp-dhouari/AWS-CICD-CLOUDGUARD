@@ -71,7 +71,9 @@ Lets first create the S3 bucket and do not forget to ADD to add IAM permission t
 
 ![header image](s33.png) 
 
-Add CloudGuard Workload security using the CLI plugin and configure the proact and the fsp. Please refer the annotations in the build and deploy stages or phases: 
+Add CloudGuard Workload security using the CLI plugin and configure the proact and the fsp. 
+IMPORTANT: You need to set your AWS Region as a variable as described by the export command. PLEASE CHANGE TO YOUR AWS REGION!
+Please refer the annotations in the build and deploy stages or phases: 
 
 **Note: A CloudGuard API token is required with the cloudguard commands to execute successfuly and you can add the token using the -t option or add a cloudguard-config.json file in your repository** 
 
