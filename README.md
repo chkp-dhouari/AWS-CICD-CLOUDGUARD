@@ -73,7 +73,7 @@ Lets first create the S3 bucket and do not forget to ADD to add IAM permission t
 
 Add the CloudGuard Workload security in the BUILD phase using the CLI plugin and configure the proact and the fsp. 
 
-**IMPORTANT: You need to set your AWS Region as a variable as described by the export command. PLEASE CHANGE TO YOUR AWS REGION and REPLACE the ClouFormation stack arn of your serverless app or function in the cloudguard fsp -c command in the Builspec.yaml!**
+**IMPORTANT: You need to set your AWS Region as a variable as described by the export command. PLEASE CHANGE TO YOUR AWS REGION and REPLACE the ClouFormation stack arn of your serverless app or function in the cloudguard fsp -c command in the Builspec.yml!**
 
 Please refer the annotations in the build and deploy stages or phases: 
 
