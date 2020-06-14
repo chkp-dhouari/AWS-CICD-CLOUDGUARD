@@ -399,7 +399,7 @@ Protego - FSP (1.5.10) Summary:
 
 You can verify that the FSP Runtime security was added as Layer to my deployed Lambda function at the AWS mgmt Console under Lamdba services:
 
-
+ ![header image](fsp.png) 
 
 
 #### if you would like to understand more about Serverless Security and CloudGuard Workload please feel free to reach to me or attend my webinars on TechTalk or BrightTalk. 
