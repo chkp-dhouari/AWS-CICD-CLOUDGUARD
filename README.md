@@ -25,17 +25,19 @@ On your laptop, please install the following:
 
 > Please note that I will be using MacOS in this tutorial and feel free to use any OS of your choice.
 
-The AWS CodePipeline create a CICD pipeline to build and deploy a Lambda function. we will using the SAM cli to generate the source code for the Lambda and needed templates for the AWS Codepipeline as follow. 
-In a CICD pipeline, there are 4 main stages from build to Runtime. Additional stages for staging and testing can be added as required by the Software development lifecycle.
+The AWS CodePipeline create a CICD pipeline to build and deploy a Lambda function as described in the picture above. We will using the SAM cli  to generate the source code for the Lambda and needed templates that are needed in the build and deploy phases. 
 
 ## This tutorial will teach you step by step how to create a AWS Codepipeline with CloudGuard Workload Serverless security:
-we will configure various ressources:
-Create a Repository on your laptop using Git and on AWS using AWS CodeCommit or GitHub. When a change or a commit is made it will be passed to an S3 bucket and then to Code Build
-A Build Project in AWS CodeBuild to checkout the code from AWS CodeCommit and package it. This includes the source code in a handler.js file, the SAM template yaml file and the Build specification yaml file or Buildspec.yaml. The Buildspec file defines flow of the various commands needed in each CICD stage in order to package and deploy the application using the SAM template. The CloudGuard serverless security will be integrated in CodeBuild with the Buildspec file using the CLI plugin.
-AWS CodeDeploy will use a CloudFormation Changeset to deploy the Lambda function. A cloudFormation stack will be needed to create a changeset and if you are not able to write a stack template, we will use the SAM deploy code to create one.
-IAM roles for all these AWS services will have to be created and needed permissions will have to be added for the CICD pipeline to execute successfully from build to deploy.
-lets get started!
-We will first use SAM to create a serverless project named here cloudguard-app for a node.js12.x serverless application. This will create a directory that I named ./cloudguard-app but you can name the SAM project directory anything you want..
+It is important to plan the creation of the ressources needed in the CICD pipeline:
+* Create a Repository on your laptop using Git and on AWS using AWS CodeCommit or GitHub. When a change or a commit is made it will be passed to an S3 bucket and then to Code Build
+* A Build Project in AWS CodeBuild to checkout the code from AWS CodeCommit and package it. This includes the source code in a handler.js file, the SAM template yaml file and the Build specification yaml file or Buildspec.yaml. The Buildspec file defines flow of the various commands needed in each CICD stage in order to package and deploy the application using the SAM template. The CloudGuard serverless security will be integrated in CodeBuild with the Buildspec file using the CLI plugin.
+* A CloudFormation Stack and Changeset to deploy the Lambda function in the Deploy phase. A cloudFormation stack will be needed to create a changeset and if you are not able to write a stack template, we will use the SAM deploy code to create one.
+* IAM roles for all these AWS services will have to be created and needed permissions will have to be added for the CICD pipeline to execute successfully from build to deploy.
+* The plugin for the Serveless security and CLI commands required by CloudGuard Workload in the Build and Runtime phases.
+
+### Let's get started!
+
+We will first use SAM to create a serverless project named here **cloudguard-app** for a simple node.js12.x serverless application. You can use your own source code and runtime with SAM if you prefer. This Tutorial applies to any serverless application that you chose to deploy. This will create a project directory that I named ./cloudguard-app but you can name the SAM project directory anything you want.
 
 ![header image](sam2.png) 
 
@@ -47,18 +49,21 @@ We will first use SAM to create a serverless project named here cloudguard-app f
 
 **template.yml** A template that defines the application's AWS resources
 
-**tests/** this directory contains unit tests for your application
+**tests/** this directory contains unit tests for your application. This is optional but testing and feedback is a key component of     DevOps.
 
-The Application is a simple node.js 12.x application that will return a string when invoked ..'Serverless app secured by CloudGuard Workload!
+The Application is a simple node.js 12.x application that will return a string when invoked ..'Serverless Apps secured by CloudGuard Workload!
+
 ![header image](src.png) 
 
-The SAM template or template.yml defines the serverless application: 
+The SAM template or **template.yml** defines the serverless application: 
 
 ![header image](temp1.png) 
 
-The build specification file or Buildspec.yml defines the required packages and uploads the deployment package to a Amazon S3 bucket.
+The build specification file or **Buildspec.yml** defines the required packages and uploads the deployment package to a Amazon S3 bucket.
 You will have to create a AWS S3 bucket and add its name to the file and add the CloudGuard Workload CLI plugin to define Proact or the governance and static code scanning as well as the runtime application security testing with the Fuction Self Protection or FSP.
-Lets first create the S3 bucket: 
+Lets first create the S3 bucket and do not forget to ADD to add IAM permission to CodeBuild role to access the S3 bucket or the build phases will fail with an error. You can use the aws command below:
+
+> aws s3 mb s3://cloudguard-bucket
 
 ![header image](s33.png) 
 
@@ -68,9 +73,10 @@ Add CloudGuard Workload security using the CLI plugin and configure the proact a
 
 ![header image](build1.png) 
 
-Its now time to intialize your project directory with Git, commit all the files a.
-I am using AWS CodeCommit. If AWS Codecommit, you will first need to add CodeCommit IAM permissions on your AWS account in order to be able to pushall the commited files to your Github or AWS CodeCommit repository. I will be using AWS CodeCommit:
+Its now time to intialize your project directory with Git, add all the needed files and commit them to your project.
+For Repository, I am using AWS CodeCommit. If AWS Codecommit, you will first need to add AWS CodeCommit IAM permissions to your AWS account role in order to be able to push all the commited files to the AWS CodeCommit repository. 
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html
+If you are using GitHub then you will need your SSH public key to your GitHub Repository.
 
 ![header image](git1.png) 
 
@@ -107,31 +113,31 @@ For Build provider, choose AWS CodeBuild, and then choose Create project:
 
 * Runtime – Standard
 
-* Runtime version – aws/codebuild/standard:3.0 ( The app is node.js 12.x requiring ver3.0)
+* Runtime version – aws/codebuild/standard:3.0 ( The app is in node.js 12.x requiring ver3.0)
 
 * Image version – Latest
 
 * Buildspec name – buildspec.yml
 
 > **Please note the CodeBuild IAM role name as you will have to add permissions to allow access to all needed AWS ressources or the pipeline will FAIL..
+
 > codebuild-cloudguard-cicd-project-service-role
 
 ![header image](cpipe6.png) 
 
-# CodeDeploy
-
-We now move to the Deploy stage and we will CloudFormation as the Deploy provider:
+We now move to the **Deploy stage** and we will use CloudFormation as the Deploy provider:
 
 ![header image](cpipe8.png) 
 
-* **Deploy provider**: cloudformation - we use that to deploy our serverless function
+* **Deploy provider**: CloudFormation - we use that to deploy our serverless function using a CF Stack and ChangeSet.
 
 * **Region**: your AWS region
 
 * **Stack name** - the name of the cloudformation stack to deploy the lambda 
 
-> **Note**: you will have to first create a CloudFormation Stack which will be used by CodeDeploy to create a ChangeSet.
-The cloudFormation Stack Template is as follow and you can use that to create the stack.
+> You will have to first create a CloudFormation Stack which will be used by CodeDeploy to create a ChangeSet.
+You can use the cloudFormation Stack Template is as below or you can write you own. Please refer to the AWS Docs for more details.
+
 ```
 AWSTemplateFormatVersion: 2010-09-09
 Description: cloudguard-app
@@ -172,22 +178,22 @@ Resources:
           Key: 'lambda:createdBy'
           
 ```
-* **Change changeset name** - add a name for the cloudformation changeset..just append changeset to the name of your stack
+* **Change changeSet name** - add a name for the cloudformation ChangeSet..just append 'Changeset' to the name of your stack
 
-* **Template** - input filename as template-export.yml as defined in your buildspec.yml file.
+* **Template** - input filename as template-export.yml as defined in your Buildspec.yml **output template** file - 
 
 * **Capabilities**: chose CAPABILITY_IAM and CAPABILITY_AUTO_EXPAND.
 
-* **RoleName**: the name of the IAM you created for the AWS CloudFormation role for CodeDeploy. Please create a IAM Role with the following permissions:
+* **RoleName**: the name of the IAM role you need to create for AWS CloudFormation role for CodeDeploy. Please create a IAM Role with the following permissions as inline policy and name it anything you want. Note This is NOT a final template and you will need to add more permissions if you are deploying more serverless services like apigateway or dynamodb using cloudformation. I am ONLY deploying a Lambda funtion here..
 
 ```
 {
     "Statement": [
         {
             "Action": [
-                "apigateway:*",
+               
                 "codedeploy:*",
-                "lambda:*",
+                "lambda:*",   <----- 
                 "cloudformation:CreateChangeSet",
                 "iam:GetRole",
                 "iam:CreateRole",
@@ -210,8 +216,11 @@ Resources:
 
 ```
 ## Create Pipeline and Release Changes
-> You have trigerred the pipeline to run and you can monitor the pipeline execution under the CodeBuild Phase logs under Build Logs.
-  you can see CloudGuard Workload did not find any malicious code but flagged the Lambda role as too permissive and that the FSP runtime security was added succesfully to the Lambda function. A secure IAM permission will be suggested in the cloudguard log for the app or security team to take action. In this case, Proact was set to alert only mode but can be changed to fail the pipeline when malicious CVEs or permissibe roles are found.
+
+You have trigerred the pipeline to run and you can monitor the pipeline execution under the CodeBuild Phase logs under Build Logs.
+you can see that*
+* During Proact, CloudGuard Workload did not find any malicious code after SAST scanning but flagged the Lambda role as too permissive. 
+* The FSP runtime security was added succesfully to the Lambda function. A secure IAM permission will be suggested in the cloudguard log for the app or security team to take action. In this case, Proact was set to alert only mode but can be changed to fail the pipeline when malicious CVEs or permissibe roles are found.
   You have deployed and secured successfuly your serverless applications
 
 ```
@@ -387,4 +396,8 @@ Protego - FSP (1.5.10) Summary:
 [Container] 2020/06/13 15:35:53 Phase context status code:  Message: 
 
 ```
+
+You can verify that the FSP Runtime security was added as Layer to my deployed Lambda function*
+
+
 #### if you would like to understand more about Serverless Security and CloudGuard Workload please feel free to reach to me or attend my webinars on TechTalk or BrightTalk. 
