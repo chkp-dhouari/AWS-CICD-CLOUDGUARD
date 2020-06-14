@@ -10,7 +10,10 @@ CloudGuard workload can be integrated in any CI/CD pipeline with plugins availab
 In this tutorial, we will be using AWS CodePipeline to deploy a serverless application and add Cloudguard Workload as a step in the build and deploy phases of the CI/CD pipeline. We will show how to build a simple Lambda function using the AWS SAM CLI and then create a CICD pipeline with AWS CodePipeline to build, secure and deploy that Lambda function. 
 We will integrate the Cloudguard Workload serverless security to AWS CodePipeline using the CLI plugin to perform Governance, Deep code analysis and Runtime application security. The proact feature perform the posture management check and SAST(Static Application Security Testing) while the Function Self Protection performs the runtime security or RAST(Runtime Application Security Testing).
 
-It is important to note that there are other methods besides AWS SAM to build and package a lambda function such as the Serverless framework. please refer to my Tutorial using the Open Serverless Framework. For more information about AWS Codepipeline. https://aws.amazon.com/codepipeline/
+It is important to note that there are other methods besides AWS SAM to build and package a lambda function such as the Serverless framework. please refer to my Tutorial using the Open Serverless Framework. 
+https://github.com/chkp-dhouari/Lambda-CICD-Security/blob/master/README.md
+
+For more information about AWS Codepipeline. https://aws.amazon.com/codepipeline/
 
  ![header image](codecomm.png) 
  
