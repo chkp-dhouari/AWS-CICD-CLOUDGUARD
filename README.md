@@ -27,7 +27,7 @@ On your laptop, please install the following:
 
 > Install Git https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
-> Please note that I will be using MacOS in this tutorial and feel free to use any OS of your choice.
+Please note that I will be using MacOS in this tutorial and feel free to use any OS of your choice.
 
 The AWS CodePipeline create a CICD pipeline to build and deploy a Lambda function as described in the picture above. We will using the SAM cli  to generate the source code for the Lambda and needed templates that are needed in the build and deploy phases. 
 
