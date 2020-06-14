@@ -16,7 +16,7 @@ https://github.com/chkp-dhouari/Lambda-CICD-Security/blob/master/README.md
 
 For more information about AWS Codepipeline. https://aws.amazon.com/codepipeline/
 
- ![header image](codecomm.png) 
+ ![header image](cc2.png) 
  
 ## Prerequesites:
 On your laptop, please install the following:
