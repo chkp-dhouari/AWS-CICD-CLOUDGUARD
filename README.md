@@ -4,7 +4,7 @@
 **Check Point CloudGuard Workload** (ex Protego) is the serverless security solution from Check Point Software. It will provide build and runtime security for serverless applications.
 
 * The Build security or **Proact** performs SAST or static scanning analysis of the code and security posture management.
-* The Runtime **FSP(function Self protection)** performs RAST or runtime security by whitelisting the behavior of the application and by blacklisting the top 10 **OWASP** attacks > https://owasp.org/www-project-top-ten/
+* The Runtime **FSP(function Self protection)** performs RAST or runtime security by whitelisting the expected behavior of the serverless application and by blacklisting the top 10 **OWASP** attacks > https://owasp.org/www-project-top-ten/
 
 CloudGuard workload can be integrated with **ANY** CI/CD pipeline with plugins available either via SAM or CLI for example. SAM or Serverless Application Model is the AWS Open Source framework for creating serverless applications (https://aws.amazon.com/serverless/sam/).
 
