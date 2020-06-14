@@ -3,8 +3,9 @@
 
 **Check Point CloudGuard Workload** (ex Protego) is the serverless security solution from Check Point Software. It will provide build and runtime security for serverless applications.
 
-The Build security or **Proact** performs SAST or static scanning analysis of the code and security posture management.
-The Runtime **FSP(function Self protection)** performs RAST or runtime security by whitelisting the behavior of the application and by blacklisting the top 10 **OWASP** attacks > https://owasp.org/www-project-top-ten/
+* The Build security or **Proact** performs SAST or static scanning analysis of the code and security posture management.
+* The Runtime **FSP(function Self protection)** performs RAST or runtime security by whitelisting the behavior of the application and by blacklisting the top 10 **OWASP** attacks > https://owasp.org/www-project-top-ten/
+
 CloudGuard workload can be integrated in any CI/CD pipeline with plugins available either via SAM or CLI for example. SAM or Serverless Application Model is the AWS Open Source framework for creating serverless applications (https://aws.amazon.com/serverless/sam/).
 
 In this tutorial, we will be using AWS CodePipeline to deploy a serverless application and add Cloudguard Workload as a step in the build and deploy phases of the CI/CD pipeline. We will show how to build a simple Lambda function using the AWS SAM CLI and then create a CICD pipeline with AWS CodePipeline to build, secure and deploy that Lambda function. 
