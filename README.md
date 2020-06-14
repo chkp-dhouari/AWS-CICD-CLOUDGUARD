@@ -1,7 +1,7 @@
 # Serverless CI/CD Security with AWS CodePipeline and Check Point CloudGuard Workload:
 ## Deploying and securing AWS Lambda functions with AWS CodePipeline and Check Point Serverless Security
 
-**Check Point CloudGuard Workload** (ex Protego) is the serverless security solution from Check Point Software. It will provide build and runtime security for serverless applications.
+**Check Point CloudGuard Workload** (ex Protego) is the serverless security solution from Check Point Software. It will provide build and runtime security for serverless applications as well serverless security compliance.
 
 * The Build security or **Proact** performs SAST or static scanning analysis of the code and security posture management.
 * The Runtime **FSP(function Self protection)** performs RAST or runtime security by whitelisting the expected behavior of the serverless application and by blacklisting the top 10 **OWASP** attacks > https://owasp.org/www-project-top-ten/
