@@ -130,6 +130,7 @@ You need to select the <Run in priveledge mode> option for CloudGuard Workload t
 
 ![header image](cpipe6.png) 
 
+# Deploy
 We now move to the **Deploy stage** and we will use CloudFormation as the Deploy provider:
 
 ![header image](cpipe8.png) 
