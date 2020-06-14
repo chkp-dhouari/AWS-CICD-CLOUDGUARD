@@ -8,12 +8,12 @@ phases:
       - pip install --upgrade awscli
   pre_build:
     commands:
-      # Discover and run unit tests in the '__tests__' directory
-      - npm run test
+      # Discover and run unit tests in the '__tests__' directory..feel free to enable..
+      # - npm run test
       # Remove all unit tests to reduce the size of the package that will be ultimately uploaded to Lambda
-      - rm -rf ./__tests__
+      # - rm -rf ./__tests__
       # Remove all dependencies not needed for the Lambda deployment package (the packages from devDependencies in package.json)
-      - npm prune --production
+      # - npm prune --production
   build:
     commands:
       # Install the CloudGuard Workload CLI Plugin
@@ -28,7 +28,7 @@ phases:
       - aws cloudformation package --template template.yml --s3-bucket $S3_BUCKET --output-template template-export.yml
   deploy:
     commands:
-      # Add the FSP Runtime security to the deployed function
+      # Add the FSP Runtime security to the deployed function. Please replace with the function cloudformation arn!
       - cloudguard fsp -c  <cloudformation stack arn>
 
 artifacts:
