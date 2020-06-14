@@ -87,7 +87,9 @@ If you are using GitHub then you will need your SSH public key to your GitHub Re
 ![header image](git3.png) 
 
 # CodeCommit
-I have created a repository in AWS CodeCommit and named it CLOUDGUARD-GIT. you can name yours whatever you want. You HAVE to initialize your repository by create a file like README.md that describe the project that you are working on. Git will fail to push any file to your Repository if you do not initialize it!
+I have created a repository in AWS CodeCommit and named it CLOUDGUARD-GIT. you can name yours whatever you want. You HAVE to initialize your repository by creating a file like README.md that describes the project that you are working on. Git will FAIL to push any files to your Repository if you do not initialize it! 
+
+Once again.. you do NOT have to use AWS CodeCommit..you can use Github and select that as your repository when you create your AWS CodePipeline.
 
 ![header image](ccom.png) 
 
