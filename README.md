@@ -425,4 +425,5 @@ All The Serverless security for the Lamdba function and other serverless service
 ## Congrats for making it Succesfully this far ..you are now a DevSecOps Champion!
 ![header image](champ.png) 
 
-> If you would like to understand more about Serverless Security and CheckPoint CloudGuard Workload, please feel free to reach out to me at dhouari@checkpoint.com or attend my webinars on TechTalk or BrightTalk. 
+> If you would like to understand more about Serverless Security and CheckPoint CloudGuard Workload and give it a go, please feel free to reach out to me at dhouari@checkpoint.com or your CheckPoint rep. 
+
