@@ -410,4 +410,4 @@ All The Serverless security for the Lamdba function and other serverless service
 
  ![header image](d9.png) 
 
-#### if you would like to understand more about Serverless Security and CloudGuard Workload please feel free to reach to me or attend my webinars on TechTalk or BrightTalk. 
+#### if you would like to understand more about Serverless Security and CheckPoint CloudGuard Workload, please feel free to reach to me or attend my webinars on TechTalk or BrightTalk. 
