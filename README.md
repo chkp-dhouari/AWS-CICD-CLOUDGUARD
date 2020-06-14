@@ -413,5 +413,7 @@ You can verify that the FSP Runtime security was added as Layer to my deployed L
 All The Serverless security for the Lamdba function and other serverless services associated with that function can be managed centrally from Cloudguard Workload in the CloudGuard Dome9 security management platform:
 
  ![header image](d9.png) 
+ 
+# Congrats for making it Succesfuly this far - ![header image](champ.jpeg) 
 
-#### if you would like to understand more about Serverless Security and CheckPoint CloudGuard Workload, please feel free to reach to me or attend my webinars on TechTalk or BrightTalk. 
+### If you would like to understand more about Serverless Security and CheckPoint CloudGuard Workload, please feel free to reach to me or attend my webinars on TechTalk or BrightTalk. 
