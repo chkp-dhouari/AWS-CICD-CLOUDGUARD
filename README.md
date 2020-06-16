@@ -45,6 +45,23 @@ We will first use SAM to create a serverless project named here **cloudguard-app
 
 ![header image](sam2.png) 
 
+You will need to chose a runtime for your application and I have chose option 1 or Node.Js12.x
+
+```
+Cloning app templates from https://github.com/awslabs/aws-sam-cli-app-templates.git
+
+AWS quick start application templates:
+        1 - Hello World Example
+        2 - Step Functions Sample App (Stock Trader)
+        3 - Quick Start: From Scratch
+        4 - Quick Start: Scheduled Events
+        5 - Quick Start: S3
+        6 - Quick Start: SNS
+        7 - Quick Start: SQS
+        8 - Quick Start: Web Backend
+        
+```
+
 ## The following ressources were generated as below:
 
 **buildspec.yml** this file is used by AWS CodeBuild to define the build stage steps to package your application for deployment to AWS - - Lambda and add the cloudguard workload build and runtime security with proact and FSP(Function Self Protect)
