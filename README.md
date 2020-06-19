@@ -45,7 +45,7 @@ We will first use SAM to create a serverless project named here **cloudguard-app
 
 ![header image](sam2.png) 
 
-You will need to chose a runtime for your application and I have chose option 1 or Node.Js12.x
+You will need to chose a runtime for your application and I have chose option 1 for Node.Js12.x and option 3 below for build a serverless from scratch per below:
 
 ```
 Cloning app templates from https://github.com/awslabs/aws-sam-cli-app-templates.git
